@@ -1,15 +1,19 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='bg_color_generator',  # Nombre del paquete en PyPI
-    version='0.1.0',
-    packages=find_packages(),
+    name='BGColorGenerator',  
+    version='2.1.3',
+    packages=['BGColorGenerator', 'BGColorGenerator.utils'],  # Encuentra automáticamente todos los paquetes
     include_package_data=True,
     install_requires=[
         'tensorflow>=2.0.0',
         'matplotlib',
-        'pandas'
+        'pandas',
+        'numpy'
     ],
+    package_data={
+        'BGColorGenerator': ['**/*'],
+    },
     description='A package for predicting the background color based on text color using a trained neural network.',
     long_description=open('README_updated.md').read(),
     long_description_content_type='text/markdown',

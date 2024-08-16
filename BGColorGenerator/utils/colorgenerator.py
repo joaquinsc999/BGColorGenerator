@@ -1,4 +1,4 @@
-from utils.visualization import plot_contrast  
+from .visualization import plot_contrast  
 import tensorflow as tf  
 import os  
 
