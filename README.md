@@ -8,23 +8,24 @@ BGColorGenerator es una biblioteca de Python que predice el color de fondo ideal
 Puedes instalar esta biblioteca directamente desde PyPI:
 
 ```bash
-pip install bg_color_generator
+pip install BGColorGenerator
 ```
 
 ## Uso
 
 ### Predicción del Color de Fondo
 
-El paquete incluye una función clave `get_bg_color` que te permite predecir el color de fondo ideal dado un color de texto en formato RGBA. También puedes visualizar el contraste entre el color de texto y el color de fondo predicho.
+El paquete incluye una función clave `get_bg_color` que te permite predecir el color de fondo ideal dado un color de texto en formato RGBA. También puedes visualizar el contraste entre el color de texto y el color de fondo predicho. La función tiene activado por defecto
+la visualización del contraste, si no la necesitas debes de seguiente ejemplo:
 
 ```python
-from utils.colorgenerator import get_bg_color
+from BGColorGenerator.utils.colorgenerator import get_bg_color
 
 # Definir el color del texto en formato RGBA
 text_color = [255, 255, 255, 1]  # Blanco opaco
 
 # Obtener el color de fondo recomendado y visualizar el contraste
-bg_color = get_bg_color(text_color)
+bg_color = get_bg_color(text_color, turn_off_visualization=True)
 print(f'Predicted background color: {bg_color}')
 ```
 
@@ -51,8 +52,8 @@ Estas dependencias se instalarán automáticamente cuando uses `pip` para instal
 Aquí hay un ejemplo completo de cómo predecir un color de fondo y visualizarlo junto al color de texto:
 
 ```python
-from utils.colorgenerator import get_bg_color
-from utils.visualization import plot_contrast
+from BGColorGenerator.utils.colorgenerator import get_bg_color
+from BGColorGenerator.utils.visualization import plot_contrast
 
 # Color del texto en RGBA (Rojo, Verde, Azul, Alpha)
 text_color = [255, 255, 255, 1]  # Blanco opaco
